@@ -133,6 +133,7 @@
 @implementation MWPhotoBrowser
 
 // Properties
+@synthesize delegate = _delegate;
 @synthesize previousNavBarTintColor = _previousNavBarTintColor;
 @synthesize navigationBarBackgroundImageDefault = _navigationBarBackgroundImageDefault,
 navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandscapePhone;
@@ -1152,6 +1153,10 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 		[alert show];
     }
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (NSUInteger)index {
+    return _currentPageIndex;
 }
 
 @end

@@ -32,6 +32,7 @@
 @interface MWPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate> 
 
 // Properties
+@property (nonatomic, strong) id<MWPhotoBrowserDelegate> delegate;
 @property (nonatomic) BOOL displayActionButton;
 
 // Init
@@ -43,6 +44,8 @@
 
 // Set page that photo browser starts on
 - (void)setInitialPageIndex:(NSUInteger)index;
+
+- (NSUInteger)index;
 
 @end
 
