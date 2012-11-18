@@ -10,9 +10,8 @@
 
 @protocol MWTapDetectingViewDelegate;
 
-@interface MWTapDetectingView : UIView {
-	id <MWTapDetectingViewDelegate> tapDelegate;
-}
+@interface MWTapDetectingView : UIView
+
 @property (nonatomic, assign) id <MWTapDetectingViewDelegate> tapDelegate;
 - (void)handleSingleTap:(UITouch *)touch;
 - (void)handleDoubleTap:(UITouch *)touch;
