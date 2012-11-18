@@ -10,8 +10,6 @@
 
 @implementation MWTapDetectingImageView
 
-@synthesize tapDelegate;
-
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
 		self.userInteractionEnabled = YES;
@@ -53,18 +51,18 @@
 }
 
 - (void)handleSingleTap:(UITouch *)touch {
-	if ([tapDelegate respondsToSelector:@selector(imageView:singleTapDetected:)])
-		[tapDelegate imageView:self singleTapDetected:touch];
+	if ([self.tapDelegate respondsToSelector:@selector(imageView:singleTapDetected:)])
+		[self.tapDelegate imageView:self singleTapDetected:touch];
 }
 
 - (void)handleDoubleTap:(UITouch *)touch {
-	if ([tapDelegate respondsToSelector:@selector(imageView:doubleTapDetected:)])
-		[tapDelegate imageView:self doubleTapDetected:touch];
+	if ([self.tapDelegate respondsToSelector:@selector(imageView:doubleTapDetected:)])
+		[self.tapDelegate imageView:self doubleTapDetected:touch];
 }
 
 - (void)handleTripleTap:(UITouch *)touch {
-	if ([tapDelegate respondsToSelector:@selector(imageView:tripleTapDetected:)])
-		[tapDelegate imageView:self tripleTapDetected:touch];
+	if ([self.tapDelegate respondsToSelector:@selector(imageView:tripleTapDetected:)])
+		[self.tapDelegate imageView:self tripleTapDetected:touch];
 }
 
 @end

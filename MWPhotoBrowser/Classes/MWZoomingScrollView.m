@@ -26,8 +26,6 @@
 
 @implementation MWZoomingScrollView
 
-@synthesize photoBrowser = _photoBrowser, photo = _photo, captionView = _captionView;
-
 - (id)initWithPhotoBrowser:(MWPhotoBrowser *)browser {
     if ((self = [super init])) {
         
@@ -67,21 +65,9 @@
     return self;
 }
 
-- (void)dealloc {
-	[_tapView release];
-	[_photoImageView release];
-	[_spinner release];
-    [_photo release];
-    [_captionView release];
-	[super dealloc];
-}
-
 - (void)setPhoto:(id<MWPhoto>)photo {
     _photoImageView.image = nil; // Release image
-    if (_photo != photo) {
-        [_photo release];
-        _photo = [photo retain];
-    }
+    _photo = photo;
     [self displayImage];
 }
 

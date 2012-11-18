@@ -15,9 +15,6 @@
 
 @interface MWZoomingScrollView : UIScrollView <UIScrollViewDelegate, MWTapDetectingImageViewDelegate, MWTapDetectingViewDelegate> {
 	
-	MWPhotoBrowser *_photoBrowser;
-    id<MWPhoto> _photo;
-	
     // This view references the related caption view for simplified
     // handling in photo browser
     MWCaptionView *_captionView;

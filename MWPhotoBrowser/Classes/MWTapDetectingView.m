@@ -10,8 +10,6 @@
 
 @implementation MWTapDetectingView
 
-@synthesize tapDelegate;
-
 - (id)init {
 	if ((self = [super init])) {
 		self.userInteractionEnabled = YES;
